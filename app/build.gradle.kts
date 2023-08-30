@@ -38,6 +38,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures{
+        dataBinding=true
+    }
+
 }
 
 dependencies {
@@ -64,5 +69,9 @@ dependencies {
 
     // paging 3
     implementation("androidx.paging:paging-runtime-ktx:3.0.0-beta03")
+
+    // Glide
+    implementation("com.github.bumptech.glide:glide:4.11.0")
+    kapt ("com.github.bumptech.glide:compiler:4.11.0")
 
 }
