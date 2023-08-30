@@ -1,6 +1,7 @@
 package com.example.moviedb.hilt
 
 import com.example.moviedb.remote.MovieInterface
+import com.example.moviedb.ui.details.MovieDetailsRepository
 import com.example.moviedb.utils.Constants
 import dagger.Module
 import dagger.Provides
@@ -19,5 +20,9 @@ object HiltModule {
         return Retrofit.Builder().baseUrl(Constants.BASE_URL).addConverterFactory(
             GsonConverterFactory.create()
         ).build().create(MovieInterface::class.java)
+    }
+    @Provides
+    fun provideRepository(movieInterface: MovieInterface): MovieDetailsRepository {
+        return MovieDetailsRepository(movieInterface)
     }
 }
