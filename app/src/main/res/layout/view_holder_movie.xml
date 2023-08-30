@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.example.moviedb.data.MovieResponse"/>
+        <import type="com.example.moviedb.data.Result"/>
         <variable
             name="movieResponse"
-            type="MovieResponse" />
+            type="Result" />
 
     </data>
 
@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:padding="4dp"
-                    app:load = "@{movieResponse.poster}"
+                    app:load = "@{movieResponse.poster_path}"
                     android:src="@color/material_dynamic_primary50"
                     android:contentDescription="Poster Image" />
 
@@ -60,7 +60,7 @@
                     android:layout_marginStart="4dp"
                     android:layout_marginEnd="4dp"
                     android:layout_marginBottom="4dp"
-                    android:text="@{`Year :` +movieResponse.year}"
+                    android:text="@{`Year :` +movieResponse.vote_count}"
                     android:textSize="18dp"
                     tools:text="hello how are you" />
 

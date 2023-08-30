@@ -14,7 +14,7 @@ class MoviePagingAdapter : PagingDataAdapter<MovieResponse,MoviePagingAdapter.My
     companion object{
         val DIFF_UTIL = object : DiffUtil.ItemCallback<MovieResponse>(){
             override fun areItemsTheSame(oldItem: MovieResponse, newItem: MovieResponse): Boolean {
-                return oldItem.imdbID==newItem.imdbID
+                return oldItem.results==newItem.results
             }
 
             override fun areContentsTheSame(
